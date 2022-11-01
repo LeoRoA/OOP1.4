@@ -18,6 +18,8 @@ public abstract class Transport {
 
     public abstract void stopRace();
 
+    public abstract void printType();
+
     public String getBrand() {
         return brand;
     }

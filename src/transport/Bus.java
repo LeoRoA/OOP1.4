@@ -1,8 +1,22 @@
 package transport;
 
 public class Bus extends Transport implements Competing {
-    public Bus(String brand, String model, double engineVolume) {
+
+    private final PassengerCapacity passCapacity;
+
+    public Bus(String brand, String model, double engineVolume, PassengerCapacity passCapacity) {
         super(brand, model, engineVolume);
+        this.passCapacity = passCapacity;
+    }
+
+    @Override
+    public void printType() {
+        if (passCapacity != null) {
+            System.out.println(passCapacity);
+        } else {
+            System.out.println("Недостаточно данных");
+        }
+        ;
     }
 
     @Override

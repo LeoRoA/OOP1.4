@@ -1,8 +1,21 @@
 package transport;
 
 public class Truck extends Transport implements Competing {
-    public Truck(String brand, String model, double engineVolume) {
+
+
+    public final LoadCapacity loadCapacity;
+
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume);
+        this.loadCapacity = (loadCapacity);
+    }
+
+    public void printType() {
+        if (loadCapacity != null) {
+            System.out.println(loadCapacity);
+        } else {
+            System.out.println("Недостаточно данных");
+        }
     }
 
     @Override
