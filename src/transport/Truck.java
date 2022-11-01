@@ -1,7 +1,7 @@
 package transport;
 
-public class Cars extends Transport implements Competing {
-    public Cars(String brand, String model, double engineVolume) {
+public class Truck extends Transport implements Competing {
+    public Truck(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }
 
@@ -14,6 +14,7 @@ public class Cars extends Transport implements Competing {
     public void stopRace() {
 
     }
+
 
     @Override
     public boolean equals(Object o) {

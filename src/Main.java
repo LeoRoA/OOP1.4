@@ -8,26 +8,26 @@ public class Main {
     }
 
     public static void task4() {
-        Cars Lada_Grande = new Cars("Lada", "Grande", 0);
-        Cars Kia_Rio = new Cars("Kia", "Rio", 1.6);
-        Cars Hyundai_Solaris = new Cars("Hyundai", "Solaris", 1.6);
-        Cars Volkswagen_Polo = new Cars("Volkswagen", "Polo", 1.6);
+        Car Lada_Grande = new Car("Lada", "Grande", 0);
+        Car Kia_Rio = new Car("Kia", "Rio", 1.6);
+        Car Hyundai_Solaris = new Car("Hyundai", "Solaris", 1.6);
+        Car Volkswagen_Polo = new Car("Volkswagen", "Polo", 1.6);
 
-        Trucks Scania_R620 = new Trucks("Scania", "R620", 13);
-        Trucks MAN_TGS = new Trucks("MAN", "TGS", 12.4);
-        Trucks Ford_FMAX = new Trucks("Ford", "F-MAX", 12.7);
-        Trucks Iveco_Stralis = new Trucks("Iveco", "Stralis", 12.9);
-
-
-        Busses Ford_Transit = new Busses("Ford", "Transit", 4);
-        Busses Peugeot_Boxer = new Busses("Peugeot", "Boxer", 3);
-        Busses Higer_KLQ6119TQ = new Busses("Higer", " KLQ6119TQ", 6);
-        Busses Iveco_Daily = new Busses("Iveco", "Daily", 3);
+        Truck Scania_R620 = new Truck("Scania", "R620", 13);
+        Truck MAN_TGS = new Truck("MAN", "TGS", 12.4);
+        Truck Ford_FMAX = new Truck("Ford", "F-MAX", 12.7);
+        Truck Iveco_Stralis = new Truck("Iveco", "Stralis", 12.9);
 
 
-        DriversB Max = new DriversB("MSD", true,13, Kia_Rio);
-        DriversC Rey = new DriversC<>("RDO", true, 7, Ford_FMAX);
-        DriversD Dom = new DriversD<>("DSG", true, 4, Iveco_Daily);
+        Bus Ford_Transit = new Bus("Ford", "Transit", 4);
+        Bus Peugeot_Boxer = new Bus("Peugeot", "Boxer", 3);
+        Bus Higer_KLQ6119TQ = new Bus("Higer", " KLQ6119TQ", 6);
+        Bus Iveco_Daily = new Bus("Iveco", "Daily", 3);
+
+
+        DriverB Max = new DriverB("MDX",13,Kia_Rio);
+        DriverC Rey = new DriverC("RDO",7, Ford_FMAX);
+        DriverD Dom = new DriverD("DSG", 4, Iveco_Daily);
 
         System.out.println(Max);
         System.out.println(Rey);
