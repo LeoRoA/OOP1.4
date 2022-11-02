@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Truck extends Transport implements Competing {
 
 
@@ -8,6 +10,13 @@ public class Truck extends Transport implements Competing {
     public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume);
         this.loadCapacity = (loadCapacity);
+    }
+
+    @Override
+    public void passDiagnostics() {
+        if (ThreadLocalRandom.current().nextBoolean()) {
+            throw new DiagException("Грузовик " + getBrand() + " " + getModel() + " не прошел диагностику");
+        } else System.out.println(("Грузовик " + getBrand() + " " + getModel() + " прошел диагностику"));
     }
 
     public void printType() {

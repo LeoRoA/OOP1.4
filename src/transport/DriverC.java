@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class DriverC extends Driver<Truck> {
 
-    public DriverC(String FIO,  int experience, Truck car) {
-        super(FIO, 'C', experience, car);
+    public DriverC(String FIO, int experience, Truck car) {
+        super(FIO, "C", experience, car);
     }
 
     @Override

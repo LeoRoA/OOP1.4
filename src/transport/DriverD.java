@@ -5,7 +5,7 @@ import java.util.Objects;
 public class DriverD extends Driver<Bus> {
 
     public DriverD(String FIO, int experience, Bus car) {
-        super(FIO, 'D', experience, car);
+        super(FIO, "D", experience, car);
     }
 
     @Override
