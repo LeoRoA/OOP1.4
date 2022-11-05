@@ -3,11 +3,11 @@ import transport.*;
 public class Main {
     public static void main(String[] args) {
 
-        task4();
+//        task4();
 
     }
 
-    public static void task4() {
+/*    public static void task4() {
         Car Lada_Grande = new Car("Lada", "Grande", 0, BodyType.SEDAN);
         Car Kia_Rio = new Car("Kia", "Rio", 1.6, BodyType.HATCHBACK);
 //        Car Hyundai_Solaris = new Car("Hyundai", "Solaris", 1.6);
@@ -38,5 +38,5 @@ public class Main {
         Iveco_Daily.passDiagnostics();
         Lada_Grande.passDiagnostics();
         Ford_FMAX.passDiagnostics();
-    }
+    }*/
 }
