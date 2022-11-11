@@ -52,6 +52,10 @@ public class Passport {
         return localDate;
     }
 
+    public String toString() {
+        return String.format("Паспорт номер %d, принадлежит %s %s %s, дата рождения: %s\n",number, firstName, middleName, lastName, localDate);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -63,9 +67,5 @@ public class Passport {
     @Override
     public int hashCode() {
         return Objects.hash(getNumber(), getFirstName(), getMiddleName(), getLastName(), getLocalDate());
-    }
-
-    public String toString() {
-        return String.format("Паспорт номер %d, принадлежит %s %s %s, дата рождения: %s\n",number, firstName, middleName, lastName, localDate);
     }
 }

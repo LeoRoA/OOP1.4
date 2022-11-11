@@ -23,6 +23,26 @@ public abstract class Driver<T extends Transport> {
         drivers.add(this);
     }
 
+    public String getFIO() {
+        return FIO;
+    }
+
+    public String getLicenseCategory() {
+        return licenseCategory;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public static void setCar(Transport transport) {
+        car = transport;
+    }
+
+    public Transport getCar() {
+        return car;
+    }
+
     public void startRace() {
 
     }
@@ -48,42 +68,6 @@ public abstract class Driver<T extends Transport> {
         }
     }
 
-    public String getFIO() {
-        return FIO;
-    }
-
-    public String getLicenseCategory() {
-        return licenseCategory;
-    }
-
-    public int getExperience() {
-        return experience;
-    }
-
-    public static void setCar(Transport transport) {
-        car = transport;
-    }
-
-    public Transport getCar() {
-        return car;
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
-    @Override
-    public String toString() {
-        return "Водитель " + getFIO() + " со стажем " + getExperience() +
-                " лет, управляет автомобилем категории " + getLicenseCategory() + " и будет участвовать в заезде\n";
-    }
-
     public static void addDriverInSet(Driver<?> driver, Set<Driver<?>> drivers) {
         if (drivers.isEmpty()) {
             drivers.add(driver);
@@ -98,6 +82,22 @@ public abstract class Driver<T extends Transport> {
             }
             drivers.add(driver);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Водитель " + getFIO() + " со стажем " + getExperience() +
+                " лет, управляет автомобилем категории " + getLicenseCategory() + " и будет участвовать в заезде\n";
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
 }

@@ -9,17 +9,6 @@ public class DriverB extends Driver<Car> {
         super(FIO, "B", experience);
 
     }
-
-    @Override
-    public boolean equals(Object o) {
-        return super.equals(o);
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
 //    @Override
 //    public String toString() {
 //        return String.format("Водитель " + getFIO() + " со стажем " + getExperience() +
@@ -28,4 +17,15 @@ public class DriverB extends Driver<Car> {
 //
 //
 //}
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return super.hashCode();
+    }
+
 }

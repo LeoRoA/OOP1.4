@@ -17,6 +17,16 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public int getBestCircle() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return 0;
+    }
+
+    @Override
     public void setDriver(Set<Driver<?>> driversD) {
         for (Driver<?> driverD : driversD) {
             if (driverD.getLicenseCategory().equals("D")) {
@@ -71,6 +81,11 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public int doPitStop() {
+        return 0;
+    }
+
+    @Override
     public boolean equals(Object o) {
         return super.equals(o);
     }
@@ -78,20 +93,5 @@ public class Bus extends Transport implements Competing {
     @Override
     public int hashCode() {
         return super.hashCode();
-    }
-
-    @Override
-    public int doPitStop() {
-        return 0;
-    }
-
-    @Override
-    public int getBestCircle() {
-        return 0;
-    }
-
-    @Override
-    public int getMaxSpeed() {
-        return 0;
     }
 }

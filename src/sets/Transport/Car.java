@@ -19,6 +19,20 @@ public class Car extends Transport implements Competing {
     }
 
     @Override
+    public int getBestCircle() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return 0;
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    @Override
     public void repair() {
         System.out.println("Машина " + getBrand() + " " + getModel() + "починена");
     }
@@ -40,10 +54,6 @@ public class Car extends Transport implements Competing {
             if (mechanic.fixesCar) {
                 mechanicList.add(mechanic);
             }
-    }
-
-    public BodyType getBodyType() {
-        return bodyType;
     }
 
     @Override
@@ -78,27 +88,7 @@ public class Car extends Transport implements Competing {
     }
 
     @Override
-    public boolean equals(Object o) {
-        return super.equals(o);
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
     public int doPitStop() {
-        return 0;
-    }
-
-    @Override
-    public int getBestCircle() {
-        return 0;
-    }
-
-    @Override
-    public int getMaxSpeed() {
         return 0;
     }
 
@@ -106,6 +96,16 @@ public class Car extends Transport implements Competing {
     public String toString() {
         return super.toString() + ", "
                 + bodyType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 
 }

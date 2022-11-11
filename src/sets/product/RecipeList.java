@@ -27,6 +27,14 @@ public class RecipeList {
         }
 
 
+    public String toString() {
+        System.out.println("RecipeList: ");
+        for (Recipe recipe : this.recipes) {
+            System.out.println(recipe);
+        }
+        return "";
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -39,12 +47,4 @@ public class RecipeList {
     public int hashCode() {
         return Objects.hash(recipes);
     }
-
-    public String toString() {
-            System.out.println("RecipeList: ");
-            for (Recipe recipe : this.recipes) {
-                System.out.println(recipe);
-            }
-            return "";
-        }
     }

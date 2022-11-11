@@ -16,10 +16,6 @@ public class Sponsor {
         this.physical = physical;
     }
 
-    public void toSponsorRace() {
-        System.out.println(name + " проспонсировал заезад на сумму " + (sponsorshipAmount * 0.2));
-    }
-
 
     public String getName() {
         return name;
@@ -33,22 +29,8 @@ public class Sponsor {
         return physical;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Sponsor)) return false;
-        Sponsor sponsor = (Sponsor) o;
-        return Double.compare(sponsor.getSponsorshipAmount(), getSponsorshipAmount()) == 0 && isPhysical() == sponsor.isPhysical() && Objects.equals(getName(), sponsor.getName());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getName(), getSponsorshipAmount(), isPhysical());
-    }
-
-    public String toString() {
-        return "Спонсор " + name + (physical ? " физическое лицо" : " юридическое лицо") +
-                " владеет следующим спонсорским капиталом: " + sponsorshipAmount + "\n";
+    public void toSponsorRace() {
+        System.out.println(name + " проспонсировал заезад на сумму " + (sponsorshipAmount * 0.2));
     }
 
     public static void addSponsorInSet(Sponsor sponsor, Set<Sponsor> sponsors) {
@@ -65,5 +47,23 @@ public class Sponsor {
             }
             sponsors.add(sponsor);
         }
+    }
+
+    public String toString() {
+        return "Спонсор " + name + (physical ? " физическое лицо" : " юридическое лицо") +
+                " владеет следующим спонсорским капиталом: " + sponsorshipAmount + "\n";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Sponsor)) return false;
+        Sponsor sponsor = (Sponsor) o;
+        return Double.compare(sponsor.getSponsorshipAmount(), getSponsorshipAmount()) == 0 && isPhysical() == sponsor.isPhysical() && Objects.equals(getName(), sponsor.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getSponsorshipAmount(), isPhysical());
     }
 }

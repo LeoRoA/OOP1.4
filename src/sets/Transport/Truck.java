@@ -18,6 +18,16 @@ public class Truck extends Transport implements Competing {
     }
 
     @Override
+    public int getBestCircle() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return 0;
+    }
+
+    @Override
     public void passDiagnostics() {
         if (ThreadLocalRandom.current().nextBoolean()) {
             throw new DiagException("Грузовик " + getBrand() + " " + getModel() + " не прошел диагностику");
@@ -73,6 +83,11 @@ public class Truck extends Transport implements Competing {
     }
 
     @Override
+    public int doPitStop() {
+        return 0;
+    }
+
+    @Override
     public boolean equals(Object o) {
         return super.equals(o);
     }
@@ -80,20 +95,5 @@ public class Truck extends Transport implements Competing {
     @Override
     public int hashCode() {
         return super.hashCode();
-    }
-
-    @Override
-    public int doPitStop() {
-        return 0;
-    }
-
-    @Override
-    public int getBestCircle() {
-        return 0;
-    }
-
-    @Override
-    public int getMaxSpeed() {
-        return 0;
     }
 }

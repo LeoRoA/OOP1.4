@@ -25,14 +25,6 @@ public class Mechanic {
         this.fixesTruck = fixesTruck;
     }
 
-    public boolean service(Transport transport) {
-        return transport.service();
-    }
-
-    public void fixTransport(Transport transport) {
-        transport.repair();
-    }
-
     public String getFullName() {
         return fullName;
     }
@@ -45,33 +37,20 @@ public class Mechanic {
         return fixesCar;
     }
 
+    public boolean service(Transport transport) {
+        return transport.service();
+    }
+
+    public void fixTransport(Transport transport) {
+        transport.repair();
+    }
+
     public boolean isFixesBus() {
         return fixesBus;
     }
 
     public boolean isFixesTruck() {
         return fixesTruck;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Mechanic)) return false;
-        Mechanic mechanic = (Mechanic) o;
-        return isFixesCar() == mechanic.isFixesCar() && isFixesBus() == mechanic.isFixesBus() && isFixesTruck() == mechanic.isFixesTruck() && getFullName().equals(mechanic.getFullName()) && getCompany().equals(mechanic.getCompany());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getFullName(), getCompany(), isFixesCar(), isFixesBus(), isFixesTruck());
-    }
-
-    @Override
-    public String toString() {
-        return fullName + " из компании " + company + " имеет доступ к обслуживаниваю " +
-                " автомобилей: " + fixesCar +
-                ", автобусов: " + fixesBus +
-                ", грузовиков: " + fixesTruck + "\n";
     }
 
     public static void addMechanicInSet(Mechanic mechanic, Set<Mechanic> mechanics) {
@@ -89,5 +68,26 @@ public class Mechanic {
             mechanics.add(mechanic);
             ;
         }
+    }
+
+    @Override
+    public String toString() {
+        return fullName + " из компании " + company + " имеет доступ к обслуживаниваю " +
+                " автомобилей: " + fixesCar +
+                ", автобусов: " + fixesBus +
+                ", грузовиков: " + fixesTruck + "\n";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Mechanic)) return false;
+        Mechanic mechanic = (Mechanic) o;
+        return isFixesCar() == mechanic.isFixesCar() && isFixesBus() == mechanic.isFixesBus() && isFixesTruck() == mechanic.isFixesTruck() && getFullName().equals(mechanic.getFullName()) && getCompany().equals(mechanic.getCompany());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFullName(), getCompany(), isFixesCar(), isFixesBus(), isFixesTruck());
     }
 }

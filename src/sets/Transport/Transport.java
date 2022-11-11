@@ -23,6 +23,18 @@ public abstract class Transport {
 
     }
 
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public double getEngineVolume() {
+        return engineVolume;
+    }
+
     public abstract void setDriver(Set<Driver<?>> drivers);
 
     public abstract void addMechanic(Set<Mechanic> mechanicList);
@@ -43,31 +55,6 @@ public abstract class Transport {
     public abstract boolean service();
 
     public abstract void repair();
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public double getEngineVolume() {
-        return engineVolume;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Transport)) return false;
-        Transport transport = (Transport) o;
-        return Double.compare(transport.getEngineVolume(), getEngineVolume()) == 0 && getBrand().equals(transport.getBrand()) && getModel().equals(transport.getModel());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getBrand(), getModel(), getEngineVolume());
-    }
 
     public Driver getDriver() {
         return driver;
@@ -92,13 +79,6 @@ public abstract class Transport {
         }
     }
 
-    @Override
-    public String toString() {
-//        printPersons();
-        return brand + " " + model;
-
-    }
-
     public static void addСarInSet(Transport transport, Set<Transport> transports) {
         if (transports.isEmpty()) {
             transports.add(transport);
@@ -113,6 +93,26 @@ public abstract class Transport {
             }
             transports.add(transport);
         }
+    }
+
+    @Override
+    public String toString() {
+//        printPersons();
+        return brand + " " + model;
+
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Transport)) return false;
+        Transport transport = (Transport) o;
+        return Double.compare(transport.getEngineVolume(), getEngineVolume()) == 0 && getBrand().equals(transport.getBrand()) && getModel().equals(transport.getModel());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBrand(), getModel(), getEngineVolume());
     }
 }
 

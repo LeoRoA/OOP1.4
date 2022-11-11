@@ -17,13 +17,6 @@ public class Recipe {
         this.products = products;
     }
 
-    public float setSum(float sum) {
-        for (Product product:products){
-            sum += product.getPrice()*product.getAmount();
-        }
-        return sum;
-    }
-
     public float getSum() {
         return sum;
     }
@@ -34,6 +27,18 @@ public class Recipe {
 
     public Set<Product> getProducts() {
         return products;
+    }
+
+    public float setSum(float sum) {
+        for (Product product:products){
+            sum += product.getPrice()*product.getAmount();
+        }
+        return sum;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Рецепт %s включает следующие ингрдидиенты: %s",getName(),getProducts());
     }
 
     @Override
@@ -47,10 +52,5 @@ public class Recipe {
     @Override
     public int hashCode() {
         return Objects.hash(getName(), getProducts(), getSum());
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Рецепт %s включает следующие ингрдидиенты: %s",getName(),getProducts());
     }
 }

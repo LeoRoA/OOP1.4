@@ -14,6 +14,12 @@ public class Task {
     }
 
     @Override
+    public String toString() {
+        return String.format("%d * %d = ?\n",
+                value1,value2);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Task)) return false;
@@ -25,11 +31,5 @@ public class Task {
     @Override
     public int hashCode() {
         return Objects.hash(value1 * value2, value1+value2);
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%d * %d = ?\n",
-                value1,value2);
     }
 }
