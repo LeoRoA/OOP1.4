@@ -1,8 +1,26 @@
 package transport;
 
 public class Car extends Transport implements Competing {
-    public Car(String brand, String model, double engineVolume) {
+
+    private final BodyType bodyType;
+
+    public Car(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType = bodyType;
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    @Override
+    public void printType() {
+        if (bodyType != null) {
+            System.out.println(bodyType);
+        } else {
+            System.out.println("Недостаточно данных");
+        }
+        ;
     }
 
     @Override
