@@ -14,6 +14,8 @@ public abstract class Transport {
         this.engineVolume = ValidationUtil.valOrDefDouble(engineVolume, 1.5);
     }
 
+    public abstract void passDiagnostics();
+
     public abstract void startRace();
 
     public abstract void stopRace();

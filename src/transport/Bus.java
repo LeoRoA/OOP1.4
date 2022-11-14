@@ -10,6 +10,11 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public void passDiagnostics() {
+        System.out.printf("Автобус %s %s в диагностике не требуется\n", getBrand(), getModel());
+    }
+
+    @Override
     public void printType() {
         if (passCapacity != null) {
             System.out.println(passCapacity);

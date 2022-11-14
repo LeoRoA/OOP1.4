@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Car extends Transport implements Competing {
 
     private final BodyType bodyType;
@@ -11,6 +13,13 @@ public class Car extends Transport implements Competing {
 
     public BodyType getBodyType() {
         return bodyType;
+    }
+
+    @Override
+    public void passDiagnostics() {
+        if (ThreadLocalRandom.current().nextBoolean()) {
+            throw new DiagException("Автомобиль " + getBrand() + " " + getModel() + " не прошел диагностику");
+        } else System.out.println("Автомобиль " + getBrand() + " " + getModel() + " прошел диагностику");
     }
 
     @Override

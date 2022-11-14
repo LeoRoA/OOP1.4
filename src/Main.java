@@ -35,5 +35,8 @@ public class Main {
         Lada_Grande.printType();
         Ford_FMAX.printType();
 
+        Iveco_Daily.passDiagnostics();
+        Lada_Grande.passDiagnostics();
+        Ford_FMAX.passDiagnostics();
     }
 }
